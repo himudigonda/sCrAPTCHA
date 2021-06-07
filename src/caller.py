@@ -3,6 +3,7 @@
 #! @author : @ruhend
 
 from captchaGenerator import captcha_generator as CG
+from stringGenerator import init_str_gen as isg
 
 debugFlag = 1
 
@@ -17,7 +18,11 @@ def __dout(status, output):
 ### Write Code From Here ###
 
 # ! replace this with the randommly generated string
-CG.captcha_generator.draftCaptcha('kjsjenf', "/Users/ruhend/Documents/GitHub/ruhend/projects/CAPTCHA/images/test.png")
+random_String = isg.init_cap_gen.genstr()
+# print(random_String)
+CG.captcha_generator.draftCaptcha(
+    random_String, "/Users/ruhend/Documents/GitHub/ruhend/projects/CAPTCHA/images/tests/automated_image.png")
+# CG.captcha_generator.draftCaptcha('kjsjenf', "/Users/ruhend/Documents/GitHub/ruhend/projects/CAPTCHA/images/test.png")
 
 
 ### Code End Here ###
