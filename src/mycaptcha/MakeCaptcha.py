@@ -13,18 +13,18 @@ def __dout(status, output):
     else:
         pass
 
+__image_handler__ = ImageCaptcha()
+
 
 ### Write Code From Here ###
 class MakeMyCaptcha:
 
     def _saveCaptchaAt(code, LOC):
-        image = ImageCaptcha()
-        image.write(code, LOC)
+        __image_handler__ .write(code, LOC)
 
     def _draftCaptcha(code, LOC):
-
-        image = ImageCaptcha()
-        generated_captcha = image.generate(code)
+        __image_handler__  = ImageCaptcha()
+        generated_captcha = __image_handler__ .generate(code)
         MakeMyCaptcha._saveCaptchaAt(code, LOC)
 
     if __name__ == '__main__':
