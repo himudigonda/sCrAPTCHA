@@ -4,29 +4,28 @@
 
 from captcha.image import *
 
-debugFlag = 1
+__debugFlag__ = 1
 
 
 def __dout(status, output):
-    if debugFlag:
+    if __debugFlag__:
         print(' ' + status + ' ' + output)
     else:
         pass
 
 
 ### Write Code From Here ###
-class captcha_generator:
+class MakeMyCaptcha:
 
-    def saveCaptchaAt(code, LOC):
+    def _saveCaptchaAt(code, LOC):
         image = ImageCaptcha()
         image.write(code, LOC)
 
-    def draftCaptcha(code, LOC):
+    def _draftCaptcha(code, LOC):
 
         image = ImageCaptcha()
-        # image = ImageCaptcha(fonts=['../../fonts/a.ttf'])
         generated_captcha = image.generate(code)
-        captcha_generator.saveCaptchaAt(code, LOC)
+        MakeMyCaptcha._saveCaptchaAt(code, LOC)
 
     if __name__ == '__main__':
         pass
