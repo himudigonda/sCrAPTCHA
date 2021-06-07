@@ -11,9 +11,10 @@
 </h1>
 
 ## Todo
-- [X] random string generation
-- [X] caption creation
-- [X] link all
+
+- [x] random string generation
+- [x] caption creation
+- [x] link all
 - [ ] hasher algorithm
 - [ ] link all
 - [ ] hashtable algorithm
@@ -21,9 +22,3 @@
 - [ ] user input
 - [ ] cross checking based on hastables
 - [ ] link all
-
-
-
-
-
-    @authors: ruhend and anirudh027
