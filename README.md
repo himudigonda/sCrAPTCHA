@@ -10,5 +10,15 @@
   ![Python](https://img.shields.io/badge/-python-333333?style=flat-square&logo=python)  
 </h1>
 
+## Todo
 
-    @authors: ruhend and anirudh027
+- [x] random string generation
+- [x] caption creation
+- [x] link all
+- [ ] hasher algorithm
+- [ ] link all
+- [ ] hashtable algorithm
+- [ ] link all
+- [ ] user input
+- [ ] cross checking based on hastables
+- [ ] link all
