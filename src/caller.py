@@ -2,8 +2,6 @@
 # 2021-06-07 13:43:33
 #! @author : @ruhend
 
-import sys
-import os
 from captchaGenerator import captcha_generator as CG
 
 debugFlag = 1
