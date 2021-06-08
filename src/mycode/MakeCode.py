@@ -2,23 +2,15 @@
 # 2021-06-07 16:53:34
 #! @author : @ruhend
 
+# imports here
 import random
 import string
 import re
 
 
-__debugFlag__ = 1
-
-
-def __dout(status, output):
-    if __debugFlag__:
-        print(' ' + status + ' ' + output)
-    else:
-        pass
-
-
+# global variables here
 __numeric_options__ = [4, 5, 6, 7]
-__alphanumeric_options__ = 'abcdefghjiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+__alphanumeric_options__ = 'abcdefghijkmnoqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789'
 
 ### Write Code From Here ###
 
