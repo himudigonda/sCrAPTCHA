@@ -11,9 +11,10 @@ from myhasher import MakeHash
 
 ### Write Code From Here ###
 # __file_number__ = 0
-__automated_path__ = '/Users/ruhend/Documents/GitHub/ruhend/projects/CAPTCHA/images/tests/'
+__automated_path__ = '/Users/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA/images/tests/'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
+
 
 class CallerLookOut:
 
@@ -30,7 +31,6 @@ class CallerLookOut:
         # Calculate Hash of alphanumeric code
         hash_of_code = hash_maker_handler._HashTheCode(_received_code)
         print(_received_code + ':' + hash_of_code)
-        
 
         #! Change this later on to recurring file name numbers.
         _save_captcha_location = __automated_path__+__file_name__
@@ -38,11 +38,11 @@ class CallerLookOut:
         # Save Captcha @_save_captcha_location
         captcha_maker_handler._draftCaptcha(
             _received_code, _save_captcha_location)
-        
+
     if __name__ == '__main__':
         # Input your number of files here
-        _net_captchas = 50
-        for _each_captcha in range(0,_net_captchas):
+        _net_captchas = 5
+        for _each_captcha in range(0, _net_captchas):
             MainContainer(_each_captcha)
 
 
