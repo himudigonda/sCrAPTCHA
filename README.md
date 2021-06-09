@@ -15,8 +15,8 @@
 - [x] random string generation
 - [x] caption creation
 - [x] link all
-- [ ] hasher algorithm
-- [ ] link all
+- x ] hasher algorithm
+- [x] link all
 - [ ] hashtable algorithm
 - [ ] link all
 - [ ] user input
