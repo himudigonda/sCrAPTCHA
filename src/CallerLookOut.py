@@ -25,22 +25,24 @@ class CallerLookOut:
         hash_maker_handler = MakeHash.MakeHash
 
         # Make alphanumeric code
-        received_code = code_maker_handler._generate_alphanumeric()
+        _received_code = code_maker_handler._generate_alphanumeric()
 
         # Calculate Hash of alphanumeric code
-        hash_of_code = hash_maker_handler._HashTheCode(received_code)
-        print(received_code + ':' + hash_of_code)
+        hash_of_code = hash_maker_handler._HashTheCode(_received_code)
+        print(_received_code + ':' + hash_of_code)
 
         #! Change this later on to recurring file name numbers.
-        save_captcha_location = __automated_path__+__file_name__
+        _save_captcha_location = __automated_path__+__file_name__
 
-        # Save Captcha @save_captcha_location
+        # Save Captcha @_save_captcha_location
         captcha_maker_handler._draftCaptcha(
-            received_code, save_captcha_location)
+            _received_code, _save_captcha_location)
         
     if __name__ == '__main__':
-        for i in range(0,50):
-            MainContainer(i)
+        # Input your number of files here
+        _net_captchas = 50
+        for _each_captcha in range(0,_net_captchas):
+            MainContainer(_each_captcha)
 
 
 ### Code End Here ###
