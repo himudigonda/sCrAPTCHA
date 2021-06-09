@@ -2,16 +2,10 @@
 # 2021-06-07 13:26:41
 #! @author : @ruhend
 
+# imports here
 from captcha.image import *
 
-__debugFlag__ = 1
-
-
-def __dout(status, output):
-    if __debugFlag__:
-        print(' ' + status + ' ' + output)
-    else:
-        pass
+# global variables here
 
 __image_handler__ = ImageCaptcha()
 
@@ -23,7 +17,7 @@ class MakeMyCaptcha:
         __image_handler__ .write(code, LOC)
 
     def _draftCaptcha(code, LOC):
-        __image_handler__  = ImageCaptcha()
+        __image_handler__ = ImageCaptcha()
         generated_captcha = __image_handler__ .generate(code)
         MakeMyCaptcha._saveCaptchaAt(code, LOC)
 
