@@ -30,6 +30,7 @@ class CallerLookOut:
         # Calculate Hash of alphanumeric code
         hash_of_code = hash_maker_handler._HashTheCode(_received_code)
         print(_received_code + ':' + hash_of_code)
+        
 
         #! Change this later on to recurring file name numbers.
         _save_captcha_location = __automated_path__+__file_name__
