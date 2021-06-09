@@ -10,16 +10,18 @@ import pickle
 __save_json_at_ = '../../storage/AN-HASH_json.json'
 
 ### Write Code From Here ###
+
+
 class DumpInJSON():
 
     # def PickleDumper(_alphanumeric_hash_dict):
     #     with open('AN-HASH_pickle.json', 'wb') as fp:
     #         pickle.dump(_alphanumeric_hash_dict, fp)
-    
+
     def JSONDumper(_alphanumeric_hash_dict):
-        with open('AN-HASH_json.json','w') as rp:
+        with open('AN-HASH_json.json', 'w') as rp:
             json.dump(_alphanumeric_hash_dict, rp)
-    
+
     # temp_dict = {'sdfasdf':'sduyq234h5iufhsgu2y3u4ihj5hrgyfgasdfguq234',
     #              'dfjgh':'wu4y97berwutyqnv9384t3ydsktupq24oiu2gsdg'
     #              }
