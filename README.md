@@ -17,9 +17,14 @@
 - [x] link all
 - [x] hasher algorithm
 - [x] link all
-- [x] hashtable algorithm
+- [x] dictionary creation
 - [x] link all
-- [ ] clean up
+- [x] JSON dump
+- [x] link all
+- [ ] prettify the codes
+- [ ] display images
+- [ ] link all
 - [ ] user input
+- [ ] link all
 - [ ] cross checking based on hastables
 - [ ] link all
