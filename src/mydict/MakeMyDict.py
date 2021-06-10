@@ -22,10 +22,10 @@ class MakeMyDict():
     def Print4romDict():
         print(__AN_hash_dict__)
 
-    Add2Dict('jsjdh', 'uiuewyr7u4ht78fsg6234')
-    Add2Dict('45uhsg', 'dscugyaui34hygdfads78')
-    Add2Dict('58uy', 'ei847598236y7iutghfgd')
-    Print4romDict()
+    # Add2Dict('jsjdh', 'uiuewyr7u4ht78fsg6234')
+    # Add2Dict('45uhsg', 'dscugyaui34hygdfads78')
+    # Add2Dict('58uy', 'ei847598236y7iutghfgd')
+    # Print4romDict()
 
     if __name__ == '__main__':
         pass
