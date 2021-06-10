@@ -6,18 +6,23 @@
 
 
 # global variables here
-__AN_hash_dict__ = {'AlphaNumeric': 'SHA256'}
+__AN_hash_dict__ = {}
 
 ### Write Code From Here ###
 
 
 class MakeMyDict():
 
-    def Add2Dict(_received_code, _hash_of_code):
+    def Add2Dict_legacy(_received_code, _hash_of_code):
         i = 1
         __AN_hash_dict__[_received_code] = _hash_of_code
         # __AN_hash_dict__.append(_received_code, _hash_of_code)
         # __AN_hash_dict__
+
+    def MakeDictCom(_received_code, _hash_of_code):
+        __AN_hash_dict__.clear()
+        __AN_hash_dict__[_received_code] = _hash_of_code
+        return __AN_hash_dict__
 
     def Print4romDict():
         print(__AN_hash_dict__)
