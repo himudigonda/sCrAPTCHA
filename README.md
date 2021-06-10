@@ -10,6 +10,8 @@
   ![Python](https://img.shields.io/badge/-python-333333?style=flat-square&logo=python)  
 </h1>
 
+ML:Anirudh
+
 ## Todo
 
 - [x] random string generation
