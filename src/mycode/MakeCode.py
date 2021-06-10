@@ -10,7 +10,7 @@ import re
 
 # global variables here
 __numeric_options__ = [4, 5, 6, 7]
-__alphanumeric_options__ = 'abcdefghijkmnoqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789'
+__alphanumeric_options__ = 'abcdefghijkmnoqrstuvwxyzABCDEFGHKLMNOPQRSTUVWXYZ0123456789'
 
 ### Write Code From Here ###
 

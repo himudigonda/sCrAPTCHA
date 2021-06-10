@@ -17,8 +17,9 @@
 - [x] link all
 - [x] hasher algorithm
 - [x] link all
-- [ ] hashtable algorithm
-- [ ] link all
+- [x] hashtable algorithm
+- [x] link all
+- [ ] clean up
 - [ ] user input
 - [ ] cross checking based on hastables
 - [ ] link all
