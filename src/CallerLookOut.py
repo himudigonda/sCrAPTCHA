@@ -3,10 +3,12 @@
 #! @author : @ruhend
 
 # imports here
+from json import dump
 from mycaptcha import MakeCaptcha
 from mycode import MakeCode
 from myhasher import MakeHash
 from mydict import MakeMyDict
+from mydumpinJSON import DumpInJSON
 
 # global variables here
 
@@ -26,6 +28,7 @@ class CallerLookOut:
         captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
         hash_maker_handler = MakeHash.MakeHash
         dict_maker_handler = MakeMyDict.MakeMyDict
+        json_dict_handler = DumpInJSON.DumpInJSON
 
         # Make alphanumeric code
         _received_code = code_maker_handler._generate_alphanumeric()
@@ -35,30 +38,28 @@ class CallerLookOut:
         print(_received_code + ':' + hash_of_code)
 
         # Make a dictionary of the values
-        dict_maker_handler.Add2Dict(hash_of_code,_received_code)
+        temp_dict = dict_maker_handler.MakeDictCom(hash_of_code, _received_code)
+        print('>',temp_dict)
+        
+        # Dump the dictionary in json
+        json_dict_handler.JSONAppender(temp_dict)
+        # json_dict_handler.JSONDumper(temp_dict)
 
         #! Change this later on to recurring file name numbers.
         _save_captcha_location = __automated_path__+__file_name__
-
-
 
         # Save Captcha @_save_captcha_location
         captcha_maker_handler._draftCaptcha(
             _received_code, _save_captcha_location)
 
-        
-
     if __name__ == '__main__':
         # dict_maker_handler = MakeMyDict.MakeMyDict
-        
+
         # Input your number of files here
-        _net_captchas = 5
+        _net_captchas = 100
         for _each_captcha in range(0, _net_captchas):
             MainContainer(_each_captcha)
         # dict_maker_handler.Print4romDict()
-        
-        
-
 
 
 ### Code End Here ###
