@@ -15,14 +15,14 @@ __alphanumeric_options__ = 'abcdefghijkmnoqrstuvwxyzABCDEFGHKLMNOPQRSTUVWXYZ0123
 ### Write Code From Here ###
 
 
-class MakeMyCode:
+class MakeMyAlphanumeric:
 
     def _generate_length():
         random_number = random.choice(__numeric_options__)
         return random_number
 
     def _generate_alphanumeric():
-        caption_length = MakeMyCode._generate_length()
+        caption_length = MakeMyAlphanumeric._generate_length()
         random_alphanumeric = ''.join(random.choice(__alphanumeric_options__)
                                       for letters in range(caption_length))
         return random_alphanumeric

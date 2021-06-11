@@ -6,7 +6,7 @@
 from ast import Call
 from json import dump
 from mycaptcha import MakeCaptcha
-from mycode import MakeCode
+from myalphanumeric import MakeAlphanumeric
 from myhasher import MakeHash
 from mydict import MakeMyDict
 from mydumpinJSON import DumpInJSON
@@ -18,7 +18,7 @@ from mydumpinJSON import DumpInJSON
 __automated_path__ = '/Users/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA/images/tests/'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
-code_maker_handler = MakeCode.MakeMyCode
+alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
 captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
 hash_maker_handler = MakeHash.MakeHash
 dict_maker_handler = MakeMyDict.MakeMyDict
@@ -27,43 +27,43 @@ json_dict_handler = DumpInJSON.DumpInJSON
 
 class CallerLookOut:
 
-    def RecieveCode(self):
-        self.recieved_code = code_maker_handler._generate_alphanumeric()
-        return self.recieved_code
+    def RecieveAlphanumeric(self):
+        self.recieved_alphanumeric = alphanumeric_maker_handler._generate_alphanumeric()
+        return self.recieved_alphanumeric
 
-    def HashOfCode(self, _received_code):
-        self.hash_of_code = hash_maker_handler._HashTheCode(_received_code)
-        return self.hash_of_code
+    def HashOfAlphanumeric(self, _received_alphanumeric):
+        self.hash_of_alphanumeric = hash_maker_handler._HashTheAlphanumeric(_received_alphanumeric)
+        return self.hash_of_alphanumeric
 
-    # def Template(self,_received_code):
+    # def Template(self,_received_alphanumeric):
     #     self.name = constructor.function(argument)
     #     return self.name
 
-    def DictMaker(self, hash_of_code, _received_code):
+    def DictMaker(self, hash_of_alphanumeric, _received_alphanumeric):
         self.dict = dict_maker_handler.MakeDictCom(
-            hash_of_code, _received_code)
+            hash_of_alphanumeric, _received_alphanumeric)
         return self.dict
 
     def JSONBuilder(self, temp_dict):
         json_dict_handler.JSONAppender(temp_dict)
 
-    def MakeNSaveCaptcha(self, _received_code, _save_captcha_location):
+    def MakeNSaveCaptcha(self, _received_alphanumeric, _save_captcha_location):
         captcha_maker_handler._draftCaptcha(
-            _received_code, _save_captcha_location)
+            _received_alphanumeric, _save_captcha_location)
 
     def MainContainer(self, _file_number):
         __file_name__ = __file_domain__+str(_file_number)+__file_extension__
         _save_captcha_location = __automated_path__+__file_name__
 
-        # Make alphanumeric code
-        _received_code = CallerLookOut.RecieveCode(self)
+        # Make alphanumeric alphanumeric
+        _received_alphanumeric = CallerLookOut.RecieveAlphanumeric(self)
 
-        # Calculate Hash of alphanumeric code
-        hash_of_code = CallerHandler.HashOfCode(_received_code)
-        # print(_received_code + ':' + hash_of_code)
+        # Calculate Hash of alphanumeric alphanumeric
+        hash_of_alphanumeric = CallerHandler.HashOfAlphanumeric(_received_alphanumeric)
+        # print(_received_alphanumeric + ':' + hash_of_alphanumeric)
 
         # Make a dictionary of the values
-        temp_dict = CallerHandler.DictMaker(hash_of_code, _received_code)
+        temp_dict = CallerHandler.DictMaker(hash_of_alphanumeric, _received_alphanumeric)
         # print('>', temp_dict)
 
         # Dump the dictionary in json
@@ -71,7 +71,7 @@ class CallerLookOut:
         # json_dict_handler.JSONDumper(temp_dict)
 
         # Save Captcha @_save_captcha_location
-        CallerHandler.MakeNSaveCaptcha(_received_code, _save_captcha_location)
+        CallerHandler.MakeNSaveCaptcha(_received_alphanumeric, _save_captcha_location)
 
 
 CallerHandler = CallerLookOut()

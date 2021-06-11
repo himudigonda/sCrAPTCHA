@@ -13,15 +13,15 @@ __AN_hash_dict__ = {}
 
 class MakeMyDict():
 
-    def Add2Dict_legacy(_received_code, _hash_of_code):
+    def Add2Dict_legacy(_received_alphanumeric, _hash_of_alphanumeric):
         i = 1
-        __AN_hash_dict__[_received_code] = _hash_of_code
-        # __AN_hash_dict__.append(_received_code, _hash_of_code)
+        __AN_hash_dict__[_received_alphanumeric] = _hash_of_alphanumeric
+        # __AN_hash_dict__.append(_received_alphanumeric, _hash_of_alphanumeric)
         # __AN_hash_dict__
 
-    def MakeDictCom(_received_code, _hash_of_code):
+    def MakeDictCom(_received_alphanumeric, _hash_of_alphanumeric):
         __AN_hash_dict__.clear()
-        __AN_hash_dict__[_received_code] = _hash_of_code
+        __AN_hash_dict__[_received_alphanumeric] = _hash_of_alphanumeric
         return __AN_hash_dict__
 
     def Print4romDict():

@@ -19,7 +19,7 @@ class MakeHash:
         sha256ed = hashlib.sha256(_string)
         return sha256ed
 
-    def _HashTheCode(_string):
+    def _HashTheAlphanumeric(_string):
         hashed_value = MakeHash._SHA256This(MakeHash._EncodeString(_string))
         hashed_value_in_hex = hashed_value.hexdigest()
         return hashed_value_in_hex

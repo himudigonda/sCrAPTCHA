@@ -13,13 +13,13 @@ __image_handler__ = ImageCaptcha()
 ### Write Code From Here ###
 class MakeMyCaptcha:
 
-    def _saveCaptchaAt(code, LOC):
-        __image_handler__ .write(code, LOC)
+    def _saveCaptchaAt(alphanumeric, LOC):
+        __image_handler__ .write(alphanumeric, LOC)
 
-    def _draftCaptcha(code, LOC):
+    def _draftCaptcha(alphanumeric, LOC):
         __image_handler__ = ImageCaptcha()
-        generated_captcha = __image_handler__ .generate(code)
-        MakeMyCaptcha._saveCaptchaAt(code, LOC)
+        generated_captcha = __image_handler__ .generate(alphanumeric)
+        MakeMyCaptcha._saveCaptchaAt(alphanumeric, LOC)
 
     if __name__ == '__main__':
         pass
