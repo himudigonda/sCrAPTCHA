@@ -28,7 +28,7 @@
 - [x] link all
 - [x] JSON dump
 - [x] link all
-- [ ] prettify the codes
+- [x] prettify the codes
 - [ ] display images
 - [ ] link all
 - [ ] user input
