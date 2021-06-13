@@ -29,8 +29,8 @@
 - [x] JSON dump
 - [x] link all
 - [x] prettify the codes
-- [ ] display images
-- [ ] link all
+- [x] display images
+- [x] link all
 - [ ] user input
 - [ ] link all
 - [ ] cross checking based on hastables
