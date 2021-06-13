@@ -23,6 +23,5 @@ class PutMyImage:
     if __name__ == '__main__':
         pass
 
-    ThrowImage(r'../../images/tests/automated_image0.png')
-
+ 
 ### Code End Here ###
