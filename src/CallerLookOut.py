@@ -9,16 +9,9 @@ from myhasher import MakeHash
 from mydict import MakeMyDict
 from mydumpinJSON import DumpInJSON
 from myimageputter import PutMyImage
+from myuserinput import UserInput
 
 # global variables here
-
-# template function
-# def Template(self,_received_alphanumeric):
-    #     self.name = constructor.function(argument)
-    #     return self.name
-
-
-### Write Code From Here ###
 __project_location__ = '/home/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA'
 __automated_path__ = __project_location__+'/images/tests'
 __file_domain__ = 'automated_image'
@@ -29,7 +22,15 @@ hash_maker_handler = MakeHash.MakeHash
 dict_maker_handler = MakeMyDict.MakeMyDict
 json_dict_handler = DumpInJSON.DumpInJSON
 image_putter_handler = PutMyImage.PutMyImage
+user_input_handler = UserInput.UserInput
 
+# template function
+# def Template(self,_received_alphanumeric):
+#     self.name = constructor.function(argument)
+#     return self.name
+
+
+### Write Code From Here ###
 
 class CallerLookOut:
 
@@ -38,9 +39,10 @@ class CallerLookOut:
         return self.recieved_alphanumeric
 
     def HashOfAlphanumeric(self, _received_alphanumeric):
-        self.hash_of_alphanumeric = hash_maker_handler._HashTheAlphanumeric(_received_alphanumeric)
+        self.hash_of_alphanumeric = hash_maker_handler._HashTheAlphanumeric(
+            _received_alphanumeric)
         return self.hash_of_alphanumeric
-    
+
     def DictMaker(self, hash_of_alphanumeric, _received_alphanumeric):
         self.dict = dict_maker_handler.MakeDictCom(
             hash_of_alphanumeric, _received_alphanumeric)
@@ -53,8 +55,13 @@ class CallerLookOut:
         captcha_maker_handler._draftCaptcha(
             _received_alphanumeric, _save_captcha_location)
 
-    def ImagePutter(self,_path_to_alphanumeric_image):
+    def ImagePutter(self, _path_to_alphanumeric_image):
         image_putter_handler.ThrowImage(_path_to_alphanumeric_image)
+
+    def GetUserInput(self):
+        self.user_input_alphanumeric = user_input_handler.GetUserInput()
+        return self.user_input_alphanumeric
+
 
     def MainContainer(self):
         __file_name__ = __file_domain__+__file_extension__
@@ -62,13 +69,17 @@ class CallerLookOut:
 
         # Make alphanumeric alphanumeric
         _received_alphanumeric = CallerLookOut.RecieveAlphanumeric(self)
+        print("Generated Captcha         : "+str(_received_alphanumeric))
 
         # Calculate Hash of alphanumeric alphanumeric
-        hash_of_alphanumeric = CallerHandler.HashOfAlphanumeric(_received_alphanumeric)
+        hash_of_alphanumeric = CallerHandler.HashOfAlphanumeric(
+            _received_alphanumeric)
+        print("Generated Captcha Hash    : "+str(hash_of_alphanumeric))
         # print(_received_alphanumeric + ':' + hash_of_alphanumeric)
 
         # Make a dictionary of the values
-        temp_dict = CallerHandler.DictMaker(hash_of_alphanumeric, _received_alphanumeric)
+        temp_dict = CallerHandler.DictMaker(
+            hash_of_alphanumeric, _received_alphanumeric)
         # print('>', temp_dict)
 
         # Dump the dictionary in json
@@ -76,13 +87,22 @@ class CallerLookOut:
         # json_dict_handler.JSONDumper(temp_dict)
 
         # Save Captcha @_save_captcha_location
-        CallerHandler.MakeNSaveCaptcha(_received_alphanumeric, _save_captcha_location)
+        CallerHandler.MakeNSaveCaptcha(
+            _received_alphanumeric, _save_captcha_location)
 
         # Shows randomly generated alphanumeric string in default image viewer client
+        # image_out_process = Process(traget = CallerHandler.ImagePutter(_save_captcha_location))
         CallerHandler.ImagePutter(_save_captcha_location)
+         
+        # Gets user input alphanumeric
+        user_input = CallerHandler.GetUserInput()
 
+        # Calculate has of user input
+        hash_of_user_input = CallerHandler.HashOfAlphanumeric(user_input)
+        print("User Input Hash           : "+str(hash_of_user_input))
+        
 CallerHandler = CallerLookOut()
 CallerHandler.MainContainer()
 
 
-### Code End Here ###
+### Code Ends Here ###
