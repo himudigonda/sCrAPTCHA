@@ -24,4 +24,4 @@ class MakeMyCaptcha:
     if __name__ == '__main__':
         pass
 
-### Code End Here ###
+### Code Ends Here ###
