@@ -1,4 +1,4 @@
-#! /usr/local/opt/python@3.9/bin/python3.9
+
 # 2021-06-07 16:53:34
 #! @author : @ruhend
 

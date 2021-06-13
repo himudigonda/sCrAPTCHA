@@ -1,4 +1,4 @@
-#!/usr/local/opt/python@3.9/bin/python3.9
+
 # 2021-06-07 13:43:33
 #! @author : @ruhend
 
@@ -19,7 +19,8 @@ from myimageputter import PutMyImage
 
 
 ### Write Code From Here ###
-__automated_path__ = '/Users/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA/images/tests/'
+__project_location__ = '/home/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA'
+__automated_path__ = __project_location__+'/images/tests'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
 alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
