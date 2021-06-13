@@ -3,18 +3,22 @@
 #! @author : @ruhend
 
 # imports here
-from ast import Call
-from json import dump
 from mycaptcha import MakeCaptcha
 from myalphanumeric import MakeAlphanumeric
 from myhasher import MakeHash
 from mydict import MakeMyDict
 from mydumpinJSON import DumpInJSON
+from myimageputter import PutMyImage
 
 # global variables here
 
+# template function
+# def Template(self,_received_alphanumeric):
+    #     self.name = constructor.function(argument)
+    #     return self.name
+
+
 ### Write Code From Here ###
-# __file_number__ = 0
 __automated_path__ = '/Users/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA/images/tests/'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
@@ -23,6 +27,7 @@ captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
 hash_maker_handler = MakeHash.MakeHash
 dict_maker_handler = MakeMyDict.MakeMyDict
 json_dict_handler = DumpInJSON.DumpInJSON
+image_putter_handler = PutMyImage.PutMyImage
 
 
 class CallerLookOut:
@@ -34,11 +39,7 @@ class CallerLookOut:
     def HashOfAlphanumeric(self, _received_alphanumeric):
         self.hash_of_alphanumeric = hash_maker_handler._HashTheAlphanumeric(_received_alphanumeric)
         return self.hash_of_alphanumeric
-
-    # def Template(self,_received_alphanumeric):
-    #     self.name = constructor.function(argument)
-    #     return self.name
-
+    
     def DictMaker(self, hash_of_alphanumeric, _received_alphanumeric):
         self.dict = dict_maker_handler.MakeDictCom(
             hash_of_alphanumeric, _received_alphanumeric)
@@ -51,8 +52,11 @@ class CallerLookOut:
         captcha_maker_handler._draftCaptcha(
             _received_alphanumeric, _save_captcha_location)
 
-    def MainContainer(self, _file_number):
-        __file_name__ = __file_domain__+str(_file_number)+__file_extension__
+    def ImagePutter(self,_path_to_alphanumeric_image):
+        image_putter_handler.ThrowImage(_path_to_alphanumeric_image)
+
+    def MainContainer(self):
+        __file_name__ = __file_domain__+__file_extension__
         _save_captcha_location = __automated_path__+__file_name__
 
         # Make alphanumeric alphanumeric
@@ -73,12 +77,11 @@ class CallerLookOut:
         # Save Captcha @_save_captcha_location
         CallerHandler.MakeNSaveCaptcha(_received_alphanumeric, _save_captcha_location)
 
+        # Shows randomly generated alphanumeric string in default image viewer client
+        CallerHandler.ImagePutter(_save_captcha_location)
 
 CallerHandler = CallerLookOut()
-_net_captchas = 2
-for _each_captcha in range(0, _net_captchas):
-    CallerHandler.MainContainer(_each_captcha)
-    # dict_maker_handler.Print4romDict()
+CallerHandler.MainContainer()
 
 
 ### Code End Here ###
