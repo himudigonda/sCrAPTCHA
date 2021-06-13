@@ -3,7 +3,9 @@
 #! @author : @ruhend
 
 # imports here
+import time
 from PIL import Image
+import psutil
 
 # global variables here
 
@@ -11,17 +13,28 @@ from PIL import Image
 
 
 class PutMyImage:
+    
+    def CloseImageWindow():
+        print(' > in close image window function')
+        time.sleep(3)
+        for proc in psutil.process_iter():
+            if proc.name() == 'display':
+                proc.terminate()
+                proc.kill()
 
     def ThrowImage(_path):
         try:
             image_to_print = Image.open(_path)
             image_to_print.show()
+            PutMyImage.CloseImageWindow()
             # print(image_to_print.histogram)
         except IOError:
             print(" - Couldn't find image at $_path") 
+
+        
 
     if __name__ == '__main__':
         pass
 
  
-### Code End Here ###
+### Code End Heres ###
