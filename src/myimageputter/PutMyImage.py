@@ -13,7 +13,7 @@ import psutil
 
 
 class PutThisImage:
-    
+
     def CloseImageWindow():
         time.sleep(0.5)
         for proc in psutil.process_iter():
@@ -28,12 +28,10 @@ class PutThisImage:
             # PutMyImage.CloseImageWindow()
             # print(image_to_print.histogram)
         except IOError:
-            print(" - Couldn't find image at $_path") 
-
-        
+            print(" - Couldn't find image at $_path")
 
     if __name__ == '__main__':
         pass
 
- 
+
 ### Code End Heres ###

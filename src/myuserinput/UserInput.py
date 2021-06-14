@@ -9,16 +9,15 @@
 inputAlphanumeric = ''
 
 
-### Write Code From Here
+# Write Code From Here
 
 class TheUserInput:
     def GetUserInput():
         inputAlphanumeric = input("Enter the CAPTCHA you see : ")
         return inputAlphanumeric
-    
+
     if __name__ == '__main__':
         GetUserInput()
-            
 
 
 ### Code Ends Here ###
