@@ -1,4 +1,4 @@
-#! /usr/local/opt/python@3.9/bin/python3.9
+
 # 2021-06-08 11:56:09
 #! @author : @ruhend
 
@@ -10,7 +10,7 @@ import hashlib
 ### Write Code From Here ###
 
 
-class MakeHash:
+class MakeAHash:
     def _EncodeString(_string):
         encoded_string = _string.encode()
         return encoded_string
@@ -19,8 +19,8 @@ class MakeHash:
         sha256ed = hashlib.sha256(_string)
         return sha256ed
 
-    def _HashTheCode(_string):
-        hashed_value = MakeHash._SHA256This(MakeHash._EncodeString(_string))
+    def _HashTheAlphanumeric(_string):
+        hashed_value = MakeAHash._SHA256This(MakeAHash._EncodeString(_string))
         hashed_value_in_hex = hashed_value.hexdigest()
         return hashed_value_in_hex
 
@@ -28,4 +28,4 @@ class MakeHash:
         pass
 
 
-### Code End Here ###
+### Code Ends Here ###

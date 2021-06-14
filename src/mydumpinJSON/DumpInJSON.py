@@ -1,4 +1,4 @@
-#! /usr/local/opt/python@3.9/bin/python3.9
+
 # 2021-06-09 12:01:55
 #! @author : @ruhend
 
@@ -12,7 +12,7 @@ __AN_hash_dict__ = {'AlphaNumeric': 'SHA256'}
 ### Write Code From Here ###
 
 
-class DumpInJSON():
+class DumpTheseInJSON():
 
     __save_json_at_ = '../../Storage/AN-HASH_json.json'
 
@@ -40,4 +40,4 @@ class DumpInJSON():
         # JSONDumper(__AN_hash_dict__)
         pass
 
-### Code End Here ###
+### Code Ends Here ###

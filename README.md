@@ -25,14 +25,11 @@
 - [x] link all
 - [x] hasher algorithm
 - [x] link all
-- [x] dictionary creation
+- [x] prettify the codes
+- [x] display images
 - [x] link all
-- [x] JSON dump
+- [x] user input
 - [x] link all
-- [ ] prettify the codes
-- [ ] display images
-- [ ] link all
-- [ ] user input
-- [ ] link all
-- [ ] cross checking based on hastables
-- [ ] link all
+- [x] cross checking
+- [x] link all
+- [x] concluding
