@@ -5,8 +5,9 @@
 # imports here
 from mycaptcha import MakeCaptcha
 from myalphanumeric import MakeAlphanumeric
+from mychecker import CompareUsInAN
 from myhasher import MakeHash
-from mydict import MakeMyDict
+from mydict import MakeDict
 from mydumpinJSON import DumpInJSON
 from myimageputter import PutMyImage
 from myuserinput import UserInput
@@ -16,14 +17,16 @@ __project_location__ = '/home/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA'
 __automated_path__ = __project_location__+'/images/tests'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
+__attempt__ = 0
+
 alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
 captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
-hash_maker_handler = MakeHash.MakeHash
-dict_maker_handler = MakeMyDict.MakeMyDict
-json_dict_handler = DumpInJSON.DumpInJSON
-image_putter_handler = PutMyImage.PutMyImage
-user_input_handler = UserInput.UserInput
-
+hash_maker_handler = MakeHash.MakeAHash
+dict_maker_handler = MakeDict.MakeMyDict
+json_dict_handler = DumpInJSON.DumpTheseInJSON
+image_putter_handler = PutMyImage.PutThisImage
+user_input_handler = UserInput.TheUserInput
+compare_handler = CompareUsInAN.CompareBothUsInAN
 # template function
 # def Template(self,_received_alphanumeric):
 #     self.name = constructor.function(argument)
@@ -57,13 +60,29 @@ class CallerLookOut:
 
     def ImagePutter(self, _path_to_alphanumeric_image):
         image_putter_handler.ThrowImage(_path_to_alphanumeric_image)
+        
+    def ImageCloser(self):
+        image_putter_handler.CloseImageWindow()
 
     def GetUserInput(self):
         self.user_input_alphanumeric = user_input_handler.GetUserInput()
         return self.user_input_alphanumeric
 
+    def CompareNSee(self,_user_input_hash, _AL_hash):
+        result = compare_handler.CompareBoth(_user_input_hash,_AL_hash)
+        return result
+
+    def FinalCheck(self,IsHooman):
+        if not IsHooman:
+            print("Hooman")
+        # elif not IsHooman and __attempt__<3:
+        #     CallerHandler.MainContainer()
+        else:
+            print("Who are you?")
+            exit()
 
     def MainContainer(self):
+        # __attempt__=__attempt__+1
         __file_name__ = __file_domain__+__file_extension__
         _save_captcha_location = __automated_path__+__file_name__
 
@@ -100,6 +119,17 @@ class CallerLookOut:
         # Calculate has of user input
         hash_of_user_input = CallerHandler.HashOfAlphanumeric(user_input)
         print("User Input Hash           : "+str(hash_of_user_input))
+        
+        # Close the opened image
+        CallerHandler.ImageCloser()
+        
+        # Compare user input with alphanumeric's hash
+        IsHooman = CallerHandler.CompareNSee(hash_of_user_input,hash_of_alphanumeric)
+        print(IsHooman)
+        CallerHandler.FinalCheck(IsHooman)
+        
+        
+        
         
 CallerHandler = CallerLookOut()
 CallerHandler.MainContainer()
