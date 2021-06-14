@@ -14,8 +14,8 @@ class CompareBothUsInAN:
 
     def CompareBoth(_user_input_hash, _AL_hash):
         if _user_input_hash == _AL_hash:
-            return 0
-        return 1
+            return 1
+        return 0
 
     if __name__ == '__main__':
         pass
