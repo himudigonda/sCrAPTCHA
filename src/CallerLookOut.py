@@ -7,8 +7,8 @@ from mycaptcha import MakeCaptcha
 from myalphanumeric import MakeAlphanumeric
 from mychecker import CompareUsInAN
 from myhasher import MakeHash
-from mydict import MakeDict
-from mydumpinJSON import DumpInJSON
+# from mydict import MakeDict
+# from mydumpinJSON import DumpInJSON
 from myimageputter import PutMyImage
 from myuserinput import UserInput
 
@@ -21,18 +21,14 @@ __file_extension__ = '.png'
 alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
 captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
 hash_maker_handler = MakeHash.MakeAHash
-dict_maker_handler = MakeDict.MakeMyDict
-json_dict_handler = DumpInJSON.DumpTheseInJSON
+# dict_maker_handler = MakeDict.MakeMyDict
+# json_dict_handler = DumpInJSON.DumpTheseInJSON
 image_putter_handler = PutMyImage.PutThisImage
 user_input_handler = UserInput.TheUserInput
 compare_handler = CompareUsInAN.CompareBothUsInAN
-# template function
-# def Template(self,_received_alphanumeric):
-#     self.name = constructor.function(argument)
-#     return self.name
-
 
 ### Write Code From Here ###
+
 
 class CallerLookOut:
     __attempt__ = 0
@@ -46,13 +42,13 @@ class CallerLookOut:
             _received_alphanumeric)
         return self.hash_of_alphanumeric
 
-    def DictMaker(self, hash_of_alphanumeric, _received_alphanumeric):
-        self.dict = dict_maker_handler.MakeDictCom(
-            hash_of_alphanumeric, _received_alphanumeric)
-        return self.dict
+    # ? def DictMaker(self, hash_of_alphanumeric, _received_alphanumeric):
+    # ?     self.dict = dict_maker_handler.MakeDictCom(
+    # ?         hash_of_alphanumeric, _received_alphanumeric)
+    # ?     return self.dict
 
-    def JSONBuilder(self, temp_dict):
-        json_dict_handler.JSONAppender(temp_dict)
+    # ? def JSONBuilder(self, temp_dict):
+    # ?     json_dict_handler.JSONAppender(temp_dict)
 
     def MakeNSaveCaptcha(self, _received_alphanumeric, _save_captcha_location):
         captcha_maker_handler._draftCaptcha(
@@ -75,7 +71,7 @@ class CallerLookOut:
     def FinalCheck(self, IsHooman):
         if IsHooman:
             print("Hooman")
-        elif not IsHooman and CallerHandler.__attempt__<2:
+        elif not IsHooman and CallerHandler.__attempt__ < 2:
             CallerHandler.__attempt__ = CallerHandler.__attempt__+1
             CallerHandler.MainContainer()
         else:
@@ -98,12 +94,12 @@ class CallerLookOut:
         # print(_received_alphanumeric + ':' + hash_of_alphanumeric)
 
         # Make a dictionary of the values
-        #? temp_dict = CallerHandler.DictMaker(
-        #?     hash_of_alphanumeric, _received_alphanumeric)
+        # ? temp_dict = CallerHandler.DictMaker(
+        # ?     hash_of_alphanumeric, _received_alphanumeric)
         # # print('>', temp_dict)
 
         # Dump the dictionary in json
-        #? CallerHandler.JSONBuilder(temp_dict)
+        # ? CallerHandler.JSONBuilder(temp_dict)
         # json_dict_handler.JSONDumper(temp_dict)
 
         # Save Captcha @_save_captcha_location
