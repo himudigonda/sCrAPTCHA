@@ -14,8 +14,8 @@ from myuserinput import UserInput
 
 # global variables here
 __project_location__ = '/home/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA'
-__automated_path__ = __project_location__+'/images/tests'
-__file_domain__ = 'automated_image'
+__automated_path__ = __project_location__+'/images/'
+__file_domain__ = 'sCrAPTCHA'
 __file_extension__ = '.png'
 
 alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
