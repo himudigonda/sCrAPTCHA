@@ -60,7 +60,7 @@ class CallerLookOut:
 
     def ImagePutter(self, _path_to_alphanumeric_image):
         image_putter_handler.ThrowImage(_path_to_alphanumeric_image)
-        
+
     def ImageCloser(self):
         image_putter_handler.CloseImageWindow()
 
@@ -68,11 +68,11 @@ class CallerLookOut:
         self.user_input_alphanumeric = user_input_handler.GetUserInput()
         return self.user_input_alphanumeric
 
-    def CompareNSee(self,_user_input_hash, _AL_hash):
-        result = compare_handler.CompareBoth(_user_input_hash,_AL_hash)
+    def CompareNSee(self, _user_input_hash, _AL_hash):
+        result = compare_handler.CompareBoth(_user_input_hash, _AL_hash)
         return result
 
-    def FinalCheck(self,IsHooman):
+    def FinalCheck(self, IsHooman):
         if not IsHooman:
             print("Hooman")
         # elif not IsHooman and __attempt__<3:
@@ -88,21 +88,21 @@ class CallerLookOut:
 
         # Make alphanumeric alphanumeric
         _received_alphanumeric = CallerLookOut.RecieveAlphanumeric(self)
-        print("Generated Captcha         : "+str(_received_alphanumeric))
+        # print("Generated Captcha         : "+str(_received_alphanumeric))
 
         # Calculate Hash of alphanumeric alphanumeric
         hash_of_alphanumeric = CallerHandler.HashOfAlphanumeric(
             _received_alphanumeric)
-        print("Generated Captcha Hash    : "+str(hash_of_alphanumeric))
+        # print("Generated Captcha Hash    : "+str(hash_of_alphanumeric))
         # print(_received_alphanumeric + ':' + hash_of_alphanumeric)
 
         # Make a dictionary of the values
-        temp_dict = CallerHandler.DictMaker(
-            hash_of_alphanumeric, _received_alphanumeric)
-        # print('>', temp_dict)
+        #? temp_dict = CallerHandler.DictMaker(
+        #?     hash_of_alphanumeric, _received_alphanumeric)
+        # # print('>', temp_dict)
 
         # Dump the dictionary in json
-        CallerHandler.JSONBuilder(temp_dict)
+        #? CallerHandler.JSONBuilder(temp_dict)
         # json_dict_handler.JSONDumper(temp_dict)
 
         # Save Captcha @_save_captcha_location
@@ -112,25 +112,24 @@ class CallerLookOut:
         # Shows randomly generated alphanumeric string in default image viewer client
         # image_out_process = Process(traget = CallerHandler.ImagePutter(_save_captcha_location))
         CallerHandler.ImagePutter(_save_captcha_location)
-         
+
         # Gets user input alphanumeric
         user_input = CallerHandler.GetUserInput()
 
         # Calculate has of user input
         hash_of_user_input = CallerHandler.HashOfAlphanumeric(user_input)
-        print("User Input Hash           : "+str(hash_of_user_input))
-        
+        # print("User Input Hash           : "+str(hash_of_user_input))
+
         # Close the opened image
         CallerHandler.ImageCloser()
-        
+
         # Compare user input with alphanumeric's hash
-        IsHooman = CallerHandler.CompareNSee(hash_of_user_input,hash_of_alphanumeric)
+        IsHooman = CallerHandler.CompareNSee(
+            hash_of_user_input, hash_of_alphanumeric)
         print(IsHooman)
         CallerHandler.FinalCheck(IsHooman)
-        
-        
-        
-        
+
+
 CallerHandler = CallerLookOut()
 CallerHandler.MainContainer()
 
