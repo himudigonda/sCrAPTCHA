@@ -17,7 +17,6 @@ __project_location__ = '/home/ruhend/Documents/GitHub/ruhend/projects/sCrAPTCHA'
 __automated_path__ = __project_location__+'/images/tests'
 __file_domain__ = 'automated_image'
 __file_extension__ = '.png'
-__attempt__ = 0
 
 alphanumeric_maker_handler = MakeAlphanumeric.MakeMyAlphanumeric
 captcha_maker_handler = MakeCaptcha.MakeMyCaptcha
@@ -36,6 +35,7 @@ compare_handler = CompareUsInAN.CompareBothUsInAN
 ### Write Code From Here ###
 
 class CallerLookOut:
+    __attempt__ = 0
 
     def RecieveAlphanumeric(self):
         self.recieved_alphanumeric = alphanumeric_maker_handler._generate_alphanumeric()
@@ -73,10 +73,11 @@ class CallerLookOut:
         return result
 
     def FinalCheck(self, IsHooman):
-        if not IsHooman:
+        if IsHooman:
             print("Hooman")
-        # elif not IsHooman and __attempt__<3:
-        #     CallerHandler.MainContainer()
+        elif not IsHooman and CallerHandler.__attempt__<2:
+            CallerHandler.__attempt__ = CallerHandler.__attempt__+1
+            CallerHandler.MainContainer()
         else:
             print("Who are you?")
             exit()
@@ -126,7 +127,7 @@ class CallerLookOut:
         # Compare user input with alphanumeric's hash
         IsHooman = CallerHandler.CompareNSee(
             hash_of_user_input, hash_of_alphanumeric)
-        print(IsHooman)
+        # print(IsHooman)
         CallerHandler.FinalCheck(IsHooman)
 
 
