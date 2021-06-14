@@ -12,11 +12,10 @@ import psutil
 ### Write Code From Here ###
 
 
-class PutMyImage:
+class PutThisImage:
     
     def CloseImageWindow():
-        print(' > in close image window function')
-        time.sleep(3)
+        time.sleep(0.5)
         for proc in psutil.process_iter():
             if proc.name() == 'display':
                 proc.terminate()
@@ -26,7 +25,7 @@ class PutMyImage:
         try:
             image_to_print = Image.open(_path)
             image_to_print.show()
-            PutMyImage.CloseImageWindow()
+            # PutMyImage.CloseImageWindow()
             # print(image_to_print.histogram)
         except IOError:
             print(" - Couldn't find image at $_path") 

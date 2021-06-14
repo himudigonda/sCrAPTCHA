@@ -11,7 +11,7 @@ inputAlphanumeric = ''
 
 ### Write Code From Here
 
-class UserInput:
+class TheUserInput:
     def GetUserInput():
         inputAlphanumeric = input("Enter the CAPTCHA you see : ")
         return inputAlphanumeric

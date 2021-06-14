@@ -12,7 +12,7 @@ __AN_hash_dict__ = {'AlphaNumeric': 'SHA256'}
 ### Write Code From Here ###
 
 
-class DumpInJSON():
+class DumpTheseInJSON():
 
     __save_json_at_ = '../../Storage/AN-HASH_json.json'
 

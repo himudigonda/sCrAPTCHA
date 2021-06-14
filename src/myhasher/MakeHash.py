@@ -10,7 +10,7 @@ import hashlib
 ### Write Code From Here ###
 
 
-class MakeHash:
+class MakeAHash:
     def _EncodeString(_string):
         encoded_string = _string.encode()
         return encoded_string
@@ -20,7 +20,7 @@ class MakeHash:
         return sha256ed
 
     def _HashTheAlphanumeric(_string):
-        hashed_value = MakeHash._SHA256This(MakeHash._EncodeString(_string))
+        hashed_value = MakeAHash._SHA256This(MakeAHash._EncodeString(_string))
         hashed_value_in_hex = hashed_value.hexdigest()
         return hashed_value_in_hex
 
